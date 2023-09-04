@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coming Soon | Faddowski</title>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="images/Faddowski.ico">
+    </head>
+    <body>
+        <div class="container">
+            <img src="images/Faddowski.com.png" alt="faddowski logo" class="logo">
+
+            <div class="content">
+                <p>Faddowski will open October 15th 2023</p>
+                <h1>We're <span>Launching</span> Soon</h1>
+                <div  class="launch-time">
+                    <div>
+                        <p id="days">00</p>
+                        <span>days</span>
+                    </div>
+                    <div>
+                        <p id="hours">00</p>
+                        <span>hours</span>
+                    </div>
+                    <div>
+                        <p id="minutes">00</p>
+                        <span>Minutes</span>
+                    </div>
+                    <div>
+                        <p id="seconds">00</p>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+                <!-- <button type="button">Learn More <img src="images/triangle.png"></button> -->
+
+                <div class="contact">
+                    <div class="contactus">
+                        <div class="social-text">
+                            <h2>Follow Us</h2>
+                        </div>
+                        <a href="https://www.instagram.com/faddowski/"><img src="images/instagram.png" alt="Instagram Profile"></a>
+                        <a href="https://www.tiktok.com/@faddowski_official"><img src="images/tik-tok.png" alt="TikTok Profile"></a>
+                    </div>
+                    <div class="contactus">
+                        <div class="social-text">
+                            <h2>Follow Us</h2>
+                        </div>
+                        <a href="https://wa.me/393516806995"><img src="images/whatsapp.ico" alt="Whatsapp Me"></a>
+                        <a href="mailto:faddowski@gmail.com"><img src="images/Email.png" alt="Email Me"></a>
+                    </div>
+                </div>
+            </div>
+            <img src="images/noun-f-35a-600554-removebg-preview.png" class="rocket">
+            <!--<img src="images/9PrD.gif" class="rocket"><img src="images/9PrD.gif" class="rocket">-->
+        </div>
+
+        <!-- script per il countdown -->
+        <script>
+            /* dichiarazione variabili */
+            var countDownDate = new Date("oct 15, 2023 15:00:00").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                /* calcola il tempo rimanente */
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                /* prendere e sostituire gli elementi per il countdown */
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                /* dice cosa fare se il counter arriva alla fine */
+                if(distance < 0){
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+        },1000);
+        </script>
+    </body>
+</html>
